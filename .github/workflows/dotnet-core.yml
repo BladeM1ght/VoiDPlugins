@@ -7,7 +7,15 @@ jobs:
   build:
     strategy:
       matrix:
-        plugin: [MeL, OemKill, PrecisionControl, Reconstructor, ScriptRunner, TouchEmu, VMultiMode, WindowsInk]
+        include:
+          - plugin: Binding/ScriptRunner
+          - plugin: Filter/MeL 
+          - plugin: Filter/PrecisionControl
+          - plugin: Filter/Reconstructor
+          - plugin: OutputMode/TouchEmu
+          - plugin: OutputMode/VMultiMode
+          - plugin: OutputMode/WindowsInk
+          - plugin: Tool/OemKill
 
     runs-on: ubuntu-latest
 
